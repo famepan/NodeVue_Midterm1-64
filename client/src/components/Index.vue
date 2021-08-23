@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h1>Get All Users</h1>
+    <h1> Show TV for client</h1>
     <div v-if="users.length">
       <h4>จำนวนผู้ใช้งาน {{ users.length }}</h4>
       <p>
         <button v-on:click="navigateTo('/user/create')">
-            สร้างผู้ใช้งาน
+            เพิ่มข้อมูลยี่ห้อโทรทัศน์
           </button>
       </p>
       <div v-for="user in users" v-bind:key="user.id">
-        <p>id: {{ user.id }}</p>
-        <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
-        <p>Email: {{ user.email }}</p>
-        <p>Password: {{ user.password }}</p>
+        <p>หมายเลขรุ่น: {{ user.id }}</p>
+        <p>ยี่ห้อ โทรทัศน์: {{ user.name }} - {{ user.lastname }}</p>
+        <p>ขนาดหน้าจอโทรทัศน์ : {{ user.email }}</p>
+        <p>ความละเอียดของจอภาพ: {{ user.password }}</p>
         <p>
           <button v-on:click="navigateTo('/user/' + user.id)">
-            ดูข้อมูลผู้ใช้
+            ดูข้อมูลของจอภาพ
           </button>
           <button v-on:click="navigateTo('/user/edit/' + user.id)">
-            แก้ไขข้อมูล
+            แก้ไขข้อมูลของจอภาพ
           </button>
           <button v-on:click="deleteUser(user)">
             ลบข้อมูล
